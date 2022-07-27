@@ -20,7 +20,7 @@ public class TaskTest {
 		String expected = String.format("%0" + n + "d", 0);
 		Task.createRAF(1, n, 1);
 		List<String> lines = Files.readAllLines(Paths.get(Task.FILE_NAME));
-		Assertions.assertEquals(lines.toString(), "[" + expected + "]");
+		Assertions.assertEquals( "[" + expected + "]", lines.toString());
 	}	
 
 	@ParameterizedTest
@@ -33,7 +33,7 @@ public class TaskTest {
 		
 		Task.createRAF(n, 5, 1);
 		List<String> lines = Files.readAllLines(Paths.get(Task.FILE_NAME));
-		Assertions.assertIterableEquals(lines, expected);
+		Assertions.assertIterableEquals(expected, lines);
 	}	
 		
 	@ParameterizedTest
